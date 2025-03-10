@@ -9,6 +9,7 @@ class BaseballGame {
     private let recordManager = RecordManager()
     private var round: Int = 0
     
+    
     func showMenu() {
         while true {
             print("환영합니다! 원하시는 번호를 입력해주세요")
