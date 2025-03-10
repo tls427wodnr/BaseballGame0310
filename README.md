@@ -9,7 +9,8 @@
 ### 프로젝트 파일 구조
 - main.swift // 메인 실행 파일
 - BaseballGame.swift // 게임 관련 로직
-- Model.swift // 데이터 모델(Answer, GameRecord)
+- AnswerManager.swift 
+- RecordManager.swift
 
 ### 프로그램 진행 흐름
 
