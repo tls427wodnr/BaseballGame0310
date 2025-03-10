@@ -7,8 +7,8 @@
 이러한 힌트를 활용하여 상대방의 숫자를 추리해 나가는 게임입니다.<br>
 
 ### 프로젝트 파일 구조
-- main.swift // 메인 실행 파일
-- BaseballGame.swift // 게임 관련 로직
+- main.swift 
+- BaseballGame.swift 
 - AnswerManager.swift 
 - RecordManager.swift
 
