@@ -8,7 +8,7 @@
 import Foundation
 
 class BaseballGame {
-    var answer: Answer!
+    var answer: Answer?
     var round: Int = 0
     var gameRecords: [GameRecord] = []
     
@@ -68,6 +68,11 @@ class BaseballGame {
     }
     
     func checkResult(_ inputNumbers: [Int]) -> Bool {
+        guard let answer = answer else {
+            print("오류: 정답이 설정되지 않았습니다.")
+            return false
+        }
+        
         var strikeCount = 0
         var ballCount = 0
         
