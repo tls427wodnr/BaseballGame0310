@@ -9,9 +9,10 @@
 ### 프로젝트 파일 구조
 - main.swift // 메인 파일
 - BaseballGame.swift // 게임 전체적인 흐름 관리
-- GameSession.swift // 게임 관리 
-- AnswerManager.swift // 정답 관리
-- RecordManager.swift // 기록 관리
+- Service/
+    - GameSession.swift // 게임 관리
+    - AnswerManager.swift // 정답 관리
+    - RecordManager.swift // 기록 관리
 
 ### 프로그램 진행 흐름
 
