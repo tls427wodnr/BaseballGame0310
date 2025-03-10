@@ -6,9 +6,7 @@
 //
 
 class BaseballGame {
-    private let answerManager = AnswerManager()
     private let recordManager = RecordManager()
-    private var answer: Answer?
     private var round: Int = 0
     
     func showMenu() {
@@ -36,26 +34,10 @@ class BaseballGame {
     }
     
     func startGame() {
-        var tryCount: Int = 0
-        var isCorrect: Bool = false
-        answer = answerManager.generateAnswer()
-        print("< 게임을 시작합니다 >")
-        while(!isCorrect) {
-            tryCount += 1
-            print("숫자를 입력하세요")
-            if let input = readLine(){
-                let inputNumbers = Array(input).compactMap { Int(String($0)) }
-                
-                if inputNumbers.count == 3, Set(inputNumbers).count == 3 {
-                    guard let answer = answer else {
-                        print("오류: 정답이 설정되지 않았습니다.")
-                        return
-                    }
-                    isCorrect = answerManager.checkResult(inputNumbers, answer: answer)
-                } else {
-                    print("올바르지 않은 입력값입니다")
-                }
-            }
+        let gameSession = GameSession()
+        guard let tryCount = gameSession.startGame() else {
+            print("오류: 게임 세션에서 시도 횟수를 가져오지 못했습니다.")
+            return
         }
         round += 1
         recordManager.addGameRecord(GameRecord(round: round, tryCount: tryCount))
