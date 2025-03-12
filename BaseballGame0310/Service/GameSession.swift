@@ -21,7 +21,7 @@ class GameSession {
                 //let inputNumbers = Array(input).compactMap { $0.wholeNumberValue }
                 let inputNumbers = input.compactMap { $0.wholeNumberValue }
                 // 1. String은 Sequence 프로토콜을 따르므로, compactMap을 직접 적용할 수 있음.
-                //    즉, String을 문자(Char) 배열로 변환할 필요 없음.
+                //    즉, String을 문자(Character) 배열로 변환할 필요 없음.
                 // 2. compactMap이 입력받은 문자열의 각 문자(Character)를 순회하며 처리
                 // 3. wholeNumberValue를 적용하여 숫자는 변환하고, 숫자가 아니면 nil 반환
                 // 4. compactMap이 nil을 제거하여 최종적으로 정수 배열을 만듦
@@ -33,7 +33,7 @@ class GameSession {
                 // 그걸 방지하기 위해 inputNumbers.count == 3을 추가로 검사하여 입력 값 자체가 3개인지도 확인
                 
                 // 코드 : "inputNumbers.count == input.count"
-                // 추가로 input이 123abc 같은 경우 inputNumbers가 변환되면 123으로 되어 기존 조건을 통과되기에 이를 통과 못하게 추가 조건을 달아줘야함
+                // input이 123abc 같은 경우 inputNumbers가 변환되면 123으로 되어 기존 조건을 통과되기에 이를 통과 못하게 추가 조건을 달아줘야함
                 if inputNumbers.count == input.count, inputNumbers.count == 3, Set(inputNumbers).count == 3 {
                     guard let answer = answer else {
                         print("오류: 정답이 설정되지 않았습니다.")
